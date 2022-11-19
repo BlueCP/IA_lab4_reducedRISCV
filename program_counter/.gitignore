@@ -1,0 +1,4 @@
+/obj_dir
+doit.sh
+top_PC.vcd
+pc_testbench.cpp
