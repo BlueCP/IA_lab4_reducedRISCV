@@ -1,4 +1,5 @@
 /obj_dir
 doit.sh
 top_PC.vcd
-pc_testbench.cpp
+pc_tb.cpp
+top.vcd
