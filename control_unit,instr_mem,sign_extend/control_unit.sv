@@ -10,31 +10,28 @@ module control_unit #(
     output logic PCsrc
 );
 
-logic addi_instr;
-logic bne_instr;
+// logic addi_instr;
+// logic bne_instr;
 
+typedef enum {UNDEFINED, ADDI, BNE} instr;
+
+// Determine instruction
 always_comb begin
-    // Determine which type of instruction.
-    addi_instr = 0;
-    bne_instr = 0;
-    if (opcode == 7'b0010011 and funct3 == 3'b000) addi_instr = 1;
-    if (opcode == 7'b1100011 and funct3 == 3'b001) bne_instr = 1;
+    if (opcode == 7'b0010011 && funct3 == 3'b000)
+        instr = ADDI;
+    else if (opcode == 7'b1100011 && funct3 == 3'b001)
+        instr = BNE;
+    else
+        instr = UNDEFINED;
+end
 
-    // Logic for RegWrite.
-    if(addi_instr == 1) RegWrite = 1;
-    if(bne_instr == 1) RegWrite = 0;
-    // Logic for ALUctrl.
-    if(addi_instr == 1) ALUctrl = 1;
-    if(bne_instr == 1) ALUctrl = 0;
-    // Logic for ALUsrc.
-    if(addi_instr == 1) ALUsrc = 1;
-    if(bne_instr == 1) ALUsrc = 0;
-    // Logic of ImmSrc.
-    if(addi_instr == 1) ImmSrc = 1;
-    if(bne_instr == 1) ImmSrc = 0;
-    // Logic for PCsrc
-    if(addi_instr == 1 or (bne_instr == 1 and EQ == 1)) PCsrc = 0;
-    if(bne_instr == 1 and EQ == 0) PCsrc = 1;
+// Set outputs
+always_comb begin
+    RegWrite = instr == ADDI;
+    ALUctrl = 0; // Only one operation on ALUout for now, addition
+    ALUsrc = instr == ADDI;
+    ImmSrc = instr == ADDI;
+    PCsrc = instr == BNE && EQ == 0;
 end
 
 endmodule
