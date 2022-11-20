@@ -3,3 +3,4 @@ doit.sh
 top_PC.vcd
 pc_tb.cpp
 top.vcd
+pc_testbench.cpp
