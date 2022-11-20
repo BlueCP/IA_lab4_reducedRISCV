@@ -1,5 +1,5 @@
 module instr_mem #(
-    parameter DATA_WIDTH = 32
+    parameter DATA_WIDTH = 32,
               ADDRESS_WIDTH = 32
 ) (
     input logic [ADDRESS_WIDTH-1:0] A,
@@ -11,7 +11,7 @@ logic [DATA_WIDTH-1:0] rom_array [2**ADDRESS_WIDTH-1:0];
 initial begin
         $display("Loading instructions.");
         $readmemh("instructions.mem", rom_array);
-end;
+end
 
 always_comb begin
     // Output is asynchronous.
