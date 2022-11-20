@@ -37,7 +37,7 @@ VL_ATTR_COLD void Vtop_PC___024root___ctor_var_reset(Vtop_PC___024root* vlSelf) 
     // Body
     vlSelf->clk = VL_RAND_RESET_I(1);
     vlSelf->rst = VL_RAND_RESET_I(1);
-    vlSelf->ImmOP = VL_RAND_RESET_I(32);
+    vlSelf->ImmOp = VL_RAND_RESET_I(32);
     vlSelf->PCsrc = VL_RAND_RESET_I(1);
     vlSelf->PC = VL_RAND_RESET_I(32);
     vlSelf->top_PC__DOT__next_PC = VL_RAND_RESET_I(32);

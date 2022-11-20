@@ -28,7 +28,7 @@ class Vtop_PC VL_NOT_FINAL : public VerilatedModel {
     VL_IN8(&clk,0,0);
     VL_IN8(&rst,0,0);
     VL_IN8(&PCsrc,0,0);
-    VL_IN(&ImmOP,31,0);
+    VL_IN(&ImmOp,31,0);
     VL_OUT(&PC,31,0);
 
     // CELLS

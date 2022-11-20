@@ -21,7 +21,7 @@ VL_INLINE_OPT void Vtop_PC___024root___combo__TOP__0(Vtop_PC___024root* vlSelf) 
     // Body
     vlSelf->top_PC__DOT__next_PC = ((IData)(vlSelf->PCsrc)
                                      ? (vlSelf->PC 
-                                        + vlSelf->ImmOP)
+                                        + vlSelf->ImmOp)
                                      : ((IData)(4U) 
                                         + vlSelf->PC));
 }
