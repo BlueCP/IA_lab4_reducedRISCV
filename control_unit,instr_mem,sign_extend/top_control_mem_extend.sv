@@ -1,4 +1,4 @@
-module top_control+mem+extend #(
+module top_control_mem_extend #(
     parameter WIDTH = 32
 ) (
     input wire [WIDTH-1:0] PC,
