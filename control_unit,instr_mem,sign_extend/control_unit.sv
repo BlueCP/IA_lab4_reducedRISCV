@@ -13,7 +13,8 @@ module control_unit #(
 // logic addi_instr;
 // logic bne_instr;
 
-typedef enum {UNDEFINED, ADDI, BNE} instr;
+typedef enum {UNDEFINED, ADDI, BNE} Instr;
+Instr instr = UNDEFINED;
 
 // Determine instruction
 always_comb begin
