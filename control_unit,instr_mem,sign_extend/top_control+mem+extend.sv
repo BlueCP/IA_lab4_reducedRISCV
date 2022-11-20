@@ -1,4 +1,4 @@
-module cpu #(
+module top_control+mem+extend #(
     parameter WIDTH = 32
 ) (
     input wire [WIDTH-1:0] PC,
