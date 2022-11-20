@@ -14,7 +14,7 @@ Vtop_PC::Vtop_PC(VerilatedContext* _vcontextp__, const char* _vcname__)
     , clk{vlSymsp->TOP.clk}
     , rst{vlSymsp->TOP.rst}
     , PCsrc{vlSymsp->TOP.PCsrc}
-    , ImmOP{vlSymsp->TOP.ImmOP}
+    , ImmOp{vlSymsp->TOP.ImmOp}
     , PC{vlSymsp->TOP.PC}
     , rootp{&(vlSymsp->TOP)}
 {

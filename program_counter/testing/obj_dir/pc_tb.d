@@ -1,4 +1,4 @@
-pc_testbench.o: ../pc_testbench.cpp \
+pc_tb.o: ../pc_tb.cpp Vtop_PC.h \
  /usr/local/share/verilator/include/verilated.h \
  /usr/local/share/verilator/include/verilatedos.h \
  /usr/local/share/verilator/include/verilated_config.h \
@@ -7,4 +7,4 @@ pc_testbench.o: ../pc_testbench.cpp \
  /usr/local/share/verilator/include/verilated_vcd_c.h \
  /usr/local/share/verilator/include/verilated.h \
  /usr/local/share/verilator/include/verilated_trace.h \
- /usr/local/share/verilator/include/verilated_trace_defs.h Vtop_PC.h
+ /usr/local/share/verilator/include/verilated_trace_defs.h
