@@ -1,5 +1,5 @@
 module adder #(
-    DATA_LENGTH = 32
+    parameter DATA_LENGTH = 32
 ) (
    input logic [DATA_LENGTH-1:0] in,
    input logic [DATA_LENGTH-1:0] N,

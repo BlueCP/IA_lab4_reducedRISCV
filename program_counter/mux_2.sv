@@ -1,5 +1,5 @@
 module mux_2 #(
-    WIDTH = 32
+    parameter WIDTH = 32
 ) (
     input logic [WIDTH-1:0] d_0,
     input logic [WIDTH-1:0] d_1,

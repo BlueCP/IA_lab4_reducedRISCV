@@ -1,9 +1,9 @@
 module  top_PC #(
-    ADDRESS_WIDTH = 32
+    parameter ADDRESS_WIDTH = 32
 ) (
     input wire clk,
     input wire rst,
-    input wire[ADDRESS_WIDTH-1:0] ImmOP,
+    input wire[ADDRESS_WIDTH-1:0] ImmOp,
     input wire PCsrc,
     output wire [ADDRESS_WIDTH-1:0] PC
 );
@@ -14,7 +14,7 @@ wire [ADDRESS_WIDTH-1:0] branch_PC;
 
 adder add_op(
     .in(PC),
-    .N(ImmOP),
+    .N(ImmOp),
     .out(branch_PC)
 );
 
