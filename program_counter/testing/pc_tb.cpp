@@ -19,7 +19,7 @@ int main(int argc, char **argv, char **env) {
     // Init simulation inputs
     top->clk = 1;
     top->rst = 0;
-    top->ImmOP = 0;
+    top->ImmOp = 0;
     top->PCsrc = 0;
 
     int clk;
@@ -41,7 +41,7 @@ int main(int argc, char **argv, char **env) {
         } else {
             top->rst = testState & 1; // 1 or 0
             top->PCsrc = (testState >> 1) & 1; // 1 or 0
-            top->ImmOP = (testState >> 2); // N-2 bit number
+            top->ImmOp = (testState >> 2); // N-2 bit number
             testCount ++;
         }
 
