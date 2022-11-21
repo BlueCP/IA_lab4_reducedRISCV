@@ -14,7 +14,7 @@ wire [ADDRESS_WIDTH-1:0] branch_PC;
 
 adder add_op(
     .in(PC),
-    .N(ImmOp),
+    .N(ImmOp << 1), // 1 step in ImmOp corresponds to 2 bytes
     .out(branch_PC)
 );
 
