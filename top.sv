@@ -8,8 +8,8 @@ logic[4:0] rs1, rs2, rd;
 logic[31:0] ImmOp, instr, PC;
 
 // Bus splitting
-assign rs1 = instr[19:15];
 assign rs2 = instr[24:20];
+assign rs1 = instr[19:15];
 assign rd = instr[11:7];
 
 aluTop aluTop(clk, ALUsrc, ALUctrl, rs1, rs2, rd, RegWrite, ImmOp, EQ, a0);
