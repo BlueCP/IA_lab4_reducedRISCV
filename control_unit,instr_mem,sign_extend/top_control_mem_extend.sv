@@ -5,7 +5,7 @@ module top_control_mem_extend #(
     input wire EQ,
     output logic[WIDTH-1:0] instr,
     output wire RegWrite,
-    output wire ALUctrl,
+    output wire[2:0] ALUctrl,
     output wire ALUsrc,
     output wire ImmSrc,
     output wire PCsrc,

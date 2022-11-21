@@ -26,16 +26,12 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
         __Vdlyvdim0__top__DOT__aluTop__DOT__RegFile__DOT__reg_array__v0 
             = (0x1fU & (vlSelf->top__DOT__instr >> 7U));
     }
-    vlSelf->top__DOT__aluTop__DOT__ALUop1 = vlSelf->top__DOT__aluTop__DOT__RegFile__DOT__reg_array
-        [(0x1fU & (vlSelf->top__DOT__instr >> 0xfU))];
-    vlSelf->top__DOT__aluTop__DOT__regOp2 = vlSelf->top__DOT__aluTop__DOT__RegFile__DOT__reg_array
-        [(0x1fU & (vlSelf->top__DOT__instr >> 0x14U))];
-    vlSelf->a0 = vlSelf->top__DOT__aluTop__DOT__RegFile__DOT__reg_array
-        [0U];
     if (__Vdlyvset__top__DOT__aluTop__DOT__RegFile__DOT__reg_array__v0) {
         vlSelf->top__DOT__aluTop__DOT__RegFile__DOT__reg_array[__Vdlyvdim0__top__DOT__aluTop__DOT__RegFile__DOT__reg_array__v0] 
             = __Vdlyvval__top__DOT__aluTop__DOT__RegFile__DOT__reg_array__v0;
     }
+    vlSelf->a0 = vlSelf->top__DOT__aluTop__DOT__RegFile__DOT__reg_array
+        [0xaU];
     vlSelf->top__DOT__top_cme__DOT__InstructionMemory__DOT__byte1 
         = ((0x1bU >= (0x1fU & vlSelf->top__DOT__PC))
             ? vlSelf->top__DOT__top_cme__DOT__InstructionMemory__DOT__rom_array
@@ -61,6 +57,8 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
                                              | (((IData)(vlSelf->top__DOT__top_cme__DOT__InstructionMemory__DOT__byte3) 
                                                  << 8U) 
                                                 | (IData)(vlSelf->top__DOT__top_cme__DOT__InstructionMemory__DOT__byte4))));
+    vlSelf->top__DOT__aluTop__DOT__ALUop1 = vlSelf->top__DOT__aluTop__DOT__RegFile__DOT__reg_array
+        [(0x1fU & (vlSelf->top__DOT__instr >> 0xfU))];
     vlSelf->top__DOT__top_cme__DOT__ControlUnit__DOT__instr 
         = ((IData)((0x13U == (0x707fU & vlSelf->top__DOT__instr)))
             ? 1U : ((IData)((0x1063U == (0x707fU & vlSelf->top__DOT__instr)))
@@ -83,7 +81,10 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
                                 : (IData)(vlSelf->top__DOT__top_cme__DOT__SignExtend__DOT__imm));
     vlSelf->top__DOT__aluTop__DOT__ALUop2 = ((1U == vlSelf->top__DOT__top_cme__DOT__ControlUnit__DOT__instr)
                                               ? vlSelf->top__DOT__ImmOp
-                                              : vlSelf->top__DOT__aluTop__DOT__regOp2);
+                                              : vlSelf->top__DOT__aluTop__DOT__RegFile__DOT__reg_array
+                                             [(0x1fU 
+                                               & (vlSelf->top__DOT__instr 
+                                                  >> 0x14U))]);
     vlSelf->top__DOT__top_PC__DOT__next_PC = (((2U 
                                                 == vlSelf->top__DOT__top_cme__DOT__ControlUnit__DOT__instr) 
                                                & (vlSelf->top__DOT__aluTop__DOT__ALUop1 

@@ -3,7 +3,8 @@ module top (
     output logic[31:0] a0
 );
 
-logic RegWrite, ALUctrl, ALUsrc, ImmSrc, PCsrc, EQ;
+logic RegWrite, ALUsrc, ImmSrc, PCsrc, EQ;
+logic[2:0] ALUctrl;
 logic[4:0] rs1, rs2, rd;
 logic[31:0] ImmOp, instr, PC;
 

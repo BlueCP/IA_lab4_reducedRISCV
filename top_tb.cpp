@@ -28,7 +28,7 @@ int main(int argc, char **argv, char **env) {
     top->rst = 1;
 
     int clk;
-    for (int i = 0; i < 100; i ++) {
+    for (int i = 0; i < 1000; i ++) {
         
         // Dump variables into VCD file and toggle clock
         for (clk = 0; clk < 2; clk ++) {

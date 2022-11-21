@@ -27,7 +27,6 @@ class Vtop___024root final : public VerilatedModule {
     IData/*31:0*/ top__DOT__PC;
     IData/*31:0*/ top__DOT__aluTop__DOT__ALUop1;
     IData/*31:0*/ top__DOT__aluTop__DOT__ALUop2;
-    IData/*31:0*/ top__DOT__aluTop__DOT__regOp2;
     IData/*31:0*/ top__DOT__top_cme__DOT__ControlUnit__DOT__instr;
     IData/*31:0*/ top__DOT__top_PC__DOT__next_PC;
     VlUnpacked<IData/*31:0*/, 32> top__DOT__aluTop__DOT__RegFile__DOT__reg_array;
