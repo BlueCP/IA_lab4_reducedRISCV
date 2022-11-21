@@ -1,12 +1,17 @@
 module instr_mem #(
-    parameter DATA_WIDTH = 32,
-              ADDRESS_WIDTH = 32
+    parameter DATA_WIDTH = 8,
+              ADDRESS_WIDTH = 32,
+              INSTRUCTION_WIDTH = 32
 ) (
     input logic [ADDRESS_WIDTH-1:0] A,
-    output logic [DATA_WIDTH-1:0] RD
+    output logic [INSTRUCTION_WIDTH-1:0] RD
 );
 
 logic [DATA_WIDTH-1:0] rom_array [2**ADDRESS_WIDTH-1:0];
+logic [DATA_WIDTH-1:0] byte1;
+logic [DATA_WIDTH-1:0] byte2;
+logic [DATA_WIDTH-1:0] byte3;
+logic [DATA_WIDTH-1:0] byte4;
 
 initial begin
         $display("Loading instructions.");
@@ -15,7 +20,11 @@ end
 
 always_comb begin
     // Output is asynchronous.
-    RD = rom_array [A];
+    byte1 = rom_array [A];
+    byte2 = rom_array [A + 1];
+    byte3 = rom_array [A + 2];
+    byte4 = rom_array [A + 3];
+    RD = {byte4, byte3, byte2, byte1};
 end
     
 endmodule
