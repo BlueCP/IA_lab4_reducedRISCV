@@ -3,7 +3,8 @@ module register #(
     parameter DATA_WIDTH = 32
 )(
     input logic clk,
-    input logic [DATA_WIDTH-1:0] Instr,
+    // input logic [DATA_WIDTH-1:0] Instr,
+    input logic[4:0] rs1, rs2, rd,
     input logic WE3,
     input logic [DATA_WIDTH-1:0] WD3,
     output logic [DATA_WIDTH-1:0] RD1,
@@ -11,9 +12,7 @@ module register #(
     output logic [DATA_WIDTH-1:0] a0
 
 );
-logic [4:0] rs2 = Instr[24:20];
-logic [4:0] rs1  = Instr[19:15];
-logic [4:0] rd = Instr[11:7];
+
 // 3-bit vector with a depth of 2^8 bits
 logic [DATA_WIDTH-1:0] reg_array [2**ADDRESS_WIDTH-1:0];
 

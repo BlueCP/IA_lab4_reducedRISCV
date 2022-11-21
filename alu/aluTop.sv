@@ -4,7 +4,8 @@ module aluTop #(
     input wire clk,
     input wire ALUsrc,
     input wire ALUctrl,
-    input wire [DATA_WIDTH-1:0] Instr,
+    //input wire [DATA_WIDTH-1:0] Instr,
+    input logic [4:0] rs1, rs2, rd,
     input wire RegWrite,
     input wire [DATA_WIDTH-1:0] ImmOp,
     output wire EQ,
@@ -19,7 +20,9 @@ wire [DATA_WIDTH-1:0] regOp2;
 
 register RegFile(
 .clk(clk),
-.Instr(Instr),
+.rs1(rs1),
+.rs2(rs2),
+.rd(rd),
 .WE3(RegWrite),
 .WD3(ALUout),
 .RD1(ALUop1),
