@@ -24,7 +24,7 @@ always_comb begin
     byte2 = rom_array [A + 1];
     byte3 = rom_array [A + 2];
     byte4 = rom_array [A + 3];
-    RD = {byte4, byte3, byte2, byte1};
+    RD = {byte1, byte2, byte3, byte4};
 end
     
 endmodule

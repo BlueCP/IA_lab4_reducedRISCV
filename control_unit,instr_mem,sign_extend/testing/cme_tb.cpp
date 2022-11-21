@@ -23,8 +23,8 @@ int main(int argc, char **argv, char **env) {
     for (int i = 0; i < 1000; i ++) {
         
         // Control, mem, extend are all combinational (unclocked).
-        tfp->dump(i);
         top->eval();
+        tfp->dump(i);
 
         // Update input signals
         if (top->PC == 24) {
