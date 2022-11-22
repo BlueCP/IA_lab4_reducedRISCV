@@ -4,7 +4,7 @@ module control_unit #(
     input logic [14:12] funct3,
     input logic [6:0] opcode,
     output logic RegWrite,
-    output logic ALUctrl,
+    output logic[2:0] ALUctrl,
     output logic ALUsrc,
     output logic ImmSrc,
     output logic PCsrc
@@ -29,7 +29,7 @@ end
 // Set outputs
 always_comb begin
     RegWrite = instr == ADDI;
-    ALUctrl = 0; // Only one operation on ALUout for now, addition
+    ALUctrl = 3'b000; // Only one operation on ALUout for now, addition
     ALUsrc = instr == ADDI;
     ImmSrc = instr == ADDI;
     PCsrc = instr == BNE && EQ == 0;

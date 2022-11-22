@@ -30,9 +30,12 @@ void Vtop_PC___024root__trace_chg_sub_0(Vtop_PC___024root* vlSelf, VerilatedVcd:
     bufp->chgIData(oldp+4,(vlSelf->PC),32);
     bufp->chgIData(oldp+5,(((IData)(4U) + vlSelf->PC)),32);
     bufp->chgIData(oldp+6,(((IData)(vlSelf->PCsrc) ? 
-                            (vlSelf->PC + vlSelf->ImmOp)
-                             : ((IData)(4U) + vlSelf->PC))),32);
-    bufp->chgIData(oldp+7,((vlSelf->PC + vlSelf->ImmOp)),32);
+                            (vlSelf->PC + (vlSelf->ImmOp 
+                                           << 1U)) : 
+                            ((IData)(4U) + vlSelf->PC))),32);
+    bufp->chgIData(oldp+7,((vlSelf->PC + (vlSelf->ImmOp 
+                                          << 1U))),32);
+    bufp->chgIData(oldp+8,((vlSelf->ImmOp << 1U)),32);
 }
 
 void Vtop_PC___024root__trace_cleanup(void* voidSelf, VerilatedVcd* /*unused*/) {

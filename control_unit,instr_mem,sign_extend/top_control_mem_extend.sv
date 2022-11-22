@@ -3,20 +3,15 @@ module top_control_mem_extend #(
 ) (
     input wire [WIDTH-1:0] PC,
     input wire EQ,
-    output wire [5:1] rs1,
-    output wire [5:1] rs2,
-    output wire [5:1] rd,
+    output logic[WIDTH-1:0] instr,
     output wire RegWrite,
-    output wire ALUctrl,
+    output wire[2:0] ALUctrl,
     output wire ALUsrc,
     output wire ImmSrc,
     output wire PCsrc,
     output wire [WIDTH-1:0] ImmOp
 
 );
-
-// Interconnect wires.
-wire [WIDTH-1:0] instr;
 
 // Lower-level modules incorporated.
 
