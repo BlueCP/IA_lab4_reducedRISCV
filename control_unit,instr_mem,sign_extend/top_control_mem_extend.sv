@@ -9,6 +9,7 @@ module top_control_mem_extend #(
     output wire ALUsrc,
     output wire ImmSrc,
     output wire PCsrc,
+    output logic RegWriteSrc,
     output wire [WIDTH-1:0] ImmOp
 
 );
@@ -28,7 +29,8 @@ control_unit ControlUnit (
     .ALUctrl (ALUctrl),
     .ALUsrc (ALUsrc),
     .ImmSrc (ImmSrc),
-    .PCsrc (PCsrc)
+    .PCsrc (PCsrc),
+    .RegWriteSrc (RegWriteSrc)
 );
 
 sign_extend SignExtend (

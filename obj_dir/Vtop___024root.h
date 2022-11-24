@@ -25,11 +25,13 @@ class Vtop___024root final : public VerilatedModule {
     IData/*31:0*/ top__DOT__ImmOp;
     IData/*31:0*/ top__DOT__instr;
     IData/*31:0*/ top__DOT__PC;
+    IData/*31:0*/ top__DOT__aluTop__DOT__ALUout;
     IData/*31:0*/ top__DOT__aluTop__DOT__ALUop1;
     IData/*31:0*/ top__DOT__aluTop__DOT__ALUop2;
     IData/*31:0*/ top__DOT__top_cme__DOT__ControlUnit__DOT__instr;
     IData/*31:0*/ top__DOT__top_PC__DOT__next_PC;
     VlUnpacked<IData/*31:0*/, 32> top__DOT__aluTop__DOT__RegFile__DOT__reg_array;
+    VlUnpacked<IData/*31:0*/, 10000> top__DOT__aluTop__DOT__ram__DOT__ram_array;
     VlUnpacked<CData/*7:0*/, 28> top__DOT__top_cme__DOT__InstructionMemory__DOT__rom_array;
     VlUnpacked<CData/*0:0*/, 2> __Vm_traceActivity;
 

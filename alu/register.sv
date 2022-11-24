@@ -22,11 +22,11 @@ logic [DATA_WIDTH-1:0] reg_array [2**ADDRESS_WIDTH-1:0];
 always_comb begin
     RD1 = reg_array [rs1];
     RD2 = reg_array[rs2];
-    a0 = reg_array[0];
+    a0 = reg_array[10];
 end
 
 always_ff @(posedge clk) begin
-        if(WE3) reg_array[rd]= WD3;
+    if(WE3) reg_array[rd] <= WD3;
 end
 
 endmodule

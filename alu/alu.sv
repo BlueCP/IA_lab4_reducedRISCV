@@ -14,7 +14,7 @@ always_comb begin
     3'b001: SUM = ALUop1 - ALUop2;
     3'b010: SUM = ALUop1 & ALUop2;
     3'b011: SUM = ALUop1 | ALUop2;
-    3'b101: SUM = ALUop1 < ALUop2;
+    3'b101: SUM = ALUop1 << ALUop2;
     default: SUM = ALUop1;
     endcase
 
