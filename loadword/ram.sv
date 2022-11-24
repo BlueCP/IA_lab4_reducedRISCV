@@ -8,7 +8,7 @@ module ram #(
     output logic [7:0] rd
 );
 
-logic [7:0] ram_array [2**ADDRESS_LENGTH-1:0]
+logic [ADDRESS_LENGTH-1:0] ram_array [2**ADDRESS_LENGTH-1:0]
     
 always_ff @(posedge clk) begin
     if(we)
