@@ -14,8 +14,8 @@ logic [DATA_WIDTH-1:0] byte3;
 logic [DATA_WIDTH-1:0] byte4;
 
 initial begin
-        $display("Loading instructions.");
-        $readmemh("control_unit,instr_mem,sign_extend/instructions.mem", rom_array);
+    $display("Loading instructions.");
+    $readmemh("control_unit,instr_mem,sign_extend/instructions.mem", rom_array);
 end
 
 always_comb begin

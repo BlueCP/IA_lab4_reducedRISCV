@@ -8,7 +8,7 @@ module PC_Reg #(
 );
 
 always_ff @(posedge clk)begin
-    if(rst)  PC <= 0;
+    if (rst) PC <= 0;
     else PC <= next_PC;
 end
     

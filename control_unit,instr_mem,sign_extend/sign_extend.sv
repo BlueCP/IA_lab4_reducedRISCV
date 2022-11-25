@@ -16,10 +16,10 @@ always_comb begin
     else
         imm = {instruction[31], instruction[7], instruction[30:25], instruction[11:8]};
 
-    // If the msb is a 0, we sign extend to 32-bits with 0s.
-    if(imm[11] == 0) ImmOp = {{data_width - imm_width{1'b0}}, imm};
-    // If the msb is a 1, we sign extend to 32-bits with 1s.
-    else ImmOp = {{data_width - imm_width{1'b1}}, imm};
+    if(imm[11] == 0) // If the msb is a 0, we sign extend to 32-bits with 0s.
+        ImmOp = {{data_width - imm_width{1'b0}}, imm};
+    else // If the msb is a 1, we sign extend to 32-bits with 1s.
+        ImmOp = {{data_width - imm_width{1'b1}}, imm};
 end
     
 endmodule

@@ -4,15 +4,12 @@ module control_unit #(
     input logic [14:12] funct3,
     input logic [6:0] opcode,
     output logic RegWrite,
-    output logic[2:0] ALUctrl,
+    output logic [2:0] ALUctrl,
     output logic ALUsrc,
     output logic ImmSrc,
     output logic PCsrc,
     output logic RegWriteSrc
 );
-
-// logic addi_instr;
-// logic bne_instr;
 
 typedef enum {UNDEFINED, ADDI, BNE, LW} Instr;
 Instr instr = UNDEFINED;
