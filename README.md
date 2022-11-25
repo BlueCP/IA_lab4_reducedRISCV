@@ -10,7 +10,7 @@ R: There were no significant challenges in testing. Most issues could be traced 
 
 ## Design decisions
 
-R: While the program counter, instruction memory, sign extension, and ALU block were all highly prescriptive, there were two areas with more design freedom; the data memory, and the control unit.
+R: In my view, there were two components which provided the freedom to allow for some interesting design choices: the data memory, and the control unit.
 
 The data memory was an interesting component to consider because of the limitations of this reduced RISC-V CPU. Because the only memory instruction was lw, there was no need to store data as anything less than 32-bit words. Given that there was no formal requirement to use byte addressing for the data memory as for the instruction memory, it was decided that the data memory would store 32-bit words which could be read using a word number rather than a byte address. In the future, this will likely have to be extended to byte addressing, in which case a mechanism for synthesising half-words and words from bytes will have to be implemented.
 
